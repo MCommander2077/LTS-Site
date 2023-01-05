@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="cn">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>梦想之城-忘记密码</title>
+
+<link rel="stylesheet" href="static/css/layui.css">
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/TCaptcha.js"></script>
+
+
+<link rel="stylesheet" href="static/css/layui.css">
+<link rel="stylesheet" href="static/css/global.css"> 
+<style type="text/css">
+.logo img {
+	width: 120px;
+	height: 46px;
+	margin-top: 10px;
+}
+
+#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}
+</style>
+
+<style type="text/css"> 
+</style>
+<script async="" src='static/js/api.js'></script></head>
+<body>
+	<!--头部样式-->
+	
+
+<style>
+	.backstage{
+		color: #fff;
+		margin-left: 80%;
+	}
+	.backstage:hover {
+   		 color: #009688;
+    }
+}
+</style>
+<div class="fly-header layui-bg-black">
+	<div class="layui-container">
+		<a class="logo" href="index.html"> <img src="static/picture/logo.png" alt="DreamCity">
+		</a>
+
+		
+    		 <ul class="layui-nav fly-nav-user"> 
+				<li class="layui-nav-item"><a href="login.html">登入</a></li>
+				<li class="layui-nav-item"><a href="register.html">注册</a></li>
+			</ul>
+		
+		
+		
+		 
+	</div>
+</div>  
+	
+	<div class="layui-container fly-marginTop">
+		<div class="fly-panel fly-panel-user" pad20="">
+			<div class="layui-tab layui-tab-brief" lay-filter="user">
+				<ul class="layui-tab-title">
+					<li class=""><a href="register.html">注册</a></li>
+					<li class=""><a href="login.html">登入</a></li>
+					<li class="layui-this">找回密码</li>
+				</ul>
+				<div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
+					<div class="layui-tab-item layui-show">
+						<div class="layui-form layui-form-pane">
+ 							
+								<div class="layui-form-item">
+									<label for="L_email" class="layui-form-label">邮箱</label>
+									<div class="layui-input-inline">
+										<input type="text" id="L_email" name="email" required="" lay-verify="email" autocomplete="off" class="layui-input">
+									</div>
+									<div class="layui-form-mid layui-word-aux">注册时候的邮箱</div>
+								</div>
+								
+								<input name="Ticket" type="hidden" id="Ticket" value=""> 
+								<input name="Randstr" type="hidden" id="Randstr" value="">
+								
+								<!-- <div class="layui-form-item">
+									<label for="L_vercode" class="layui-form-label">人类验证</label>
+									<div class="layui-input-inline">
+										<input type="text" id="L_vercode" name="code" required=""
+											lay-verify="required" placeholder="输入图片中的验证码"
+											autocomplete="off" class="layui-input">
+									</div>
+									<div class="layui-form-mid" style="padding: 1px 0 !important;" onclick="changeImg()">
+										 <img src="validateCode.do" id="validateCode" width="116" height="36">
+									</div>
+								</div> -->
+								
+								<div class="layui-form-item">
+									<button class="layui-btn" lay-submit="" lay-filter="login">立即找回</button>  
+									
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--底部样式-->
+	<div class="fly-footer">
+	<p>
+		<a href="index.html">夜雨寄北</a> 版权所有Copyright © 2017-2018
+		MCVIP.NET. All Rights Reserved. MCVIP.NET 版权所有
+	</p>
+	<p class="fly-union">
+		<a href="email-protection.html#157d7079797a71707270557c76797a60713b767a78">联系站长</a> 
+		<!-- <a href="http://www.miitbeian.gov.cn/">赣ICP备16002076号-1</a>  -->
+		<img src="static/picture/bekiantubiao.png" alt="备案图标"><a target="_blank" href="javascript:;">粤公网安备 44011202000254号</a>
+		<script data-cfasync="false" src="static/js/email-decode.min.js"></script><script src="static/js/z_stat-1271981366_1271981366.js" language="JavaScript"></script>
+	</p>
+</div>
+ 
+	
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'64c19a38ebafeb08',m:'548bf01464ff9a910b4b7bd7ac52b1c4ae086163-1620465524-1800-AaExY49I5FuNyzvkwpgQgl/EmNTa8VhlB0OiCxX5bAjMJ9mClXCghpay5JUEO5X/q32xD+ywoGeYp9KUVCiOzp21kaw/mp7sw1jyeCTxK1WXtSWgv1m6YPVyq35eSn2AJxW+PkedqnWCTXzZbVvJJ5k=',s:[0xb7b7497d00,0xabdea2a248],}})();</script></body>
+<script type="text/javascript">
+	var fromdata;
+	layui.config({
+		base : "js/layui/lay/modules/"
+	}).use([ 'form', 'layer', 'jquery', 'carousel', 'element' ], function() {
+
+		var $ = layui.jquery,
+			form = layui.form,
+			carousel = layui.carousel;
+			
+		var captcha1 = new TencentCaptcha('2089410012', function(res) {
+			if(res.ret === 0){
+				$("#Ticket").val(res.ticket);
+				$("#Randstr").val(res.randstr);
+				fromdata.ticket = res.ticket;
+				fromdata.randstr = res.randstr;
+				forget();
+			}else
+			{
+				layer.msg("😯 验证失败！请重试", {icon: 5});  
+			}
+		});
+		
+		form.on('submit(login)', function(data) {
+		  
+			if($("#L_email").val()=="")
+			{				
+				layer.msg("邮箱不能为空!", {icon: 5}); 
+			}  
+			
+			fromdata =  data.field;
+			//打开验证码
+			captcha1.show();
+			
+ 		});
+		
+		function forget(){
+			//注册
+			$.ajax({
+				url : 'account/forget.do',
+				type : 'post',
+				async : true,
+				data : fromdata,
+				success : function(data) {
+					if(data.code==0)
+					{
+						window.location.href="message?msg=已经发送到您的邮箱！打开邮箱链接进行密码重置！&code=0&url=login";
+ 		           	    layer.close(index);
+		                return false;
+					}else
+					{  
+						layer.msg(data.msg, {icon: 5}); 
+		           	    layer.close(index);
+		                return false;
+					}
+				}
+			});
+		}
+
+	});
+	/* // 刷新图片
+	function changeImg() {
+		var imgSrc = $("#validateCode");
+		var src = imgSrc.attr("src");
+		imgSrc.attr("src", changeUrl(src));
+	}
+
+
+	//为了使每次生成图片不一致，即不让浏览器读缓存，所以需要加上时间戳
+	function changeUrl(url) {
+		var timestamp = (new Date()).valueOf();
+		var index = url.indexOf("?", url);
+		if (index > 0) {
+			url = url.substring(index, url.indexOf(url, "?"));
+		}
+		if ( (url.indexOf("&") >= 0) ) {
+			url = url + "×tamp=" + timestamp;
+		} else {
+			url = url + "?timestamp=" + timestamp;
+		}
+		return url;
+	} */
+</script>
+<script src="static/js/layui.js"></script>
+</html>
