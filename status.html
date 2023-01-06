@@ -7,11 +7,12 @@
 </head>
 
 <body>
-    <img src="https://mcapi.us/server/image?ip=lts.play.gamesmc.online">
+    <img src="https://mcapi.us/server/image?ip=lts.play.gamesmc.online&title=LTS-Survival服务器">
     <div class="server-status">
         <p><span class="server-online"></span></br></p>
         <p>服务器简介：<span class="server-motd"></span></br></p>
         <p>玩家：<span class="server-players"></span></p>
+        <p>版本：<span class="server-version"></span></p>
     </div>
     <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
     <script>
@@ -26,6 +27,7 @@
             document.querySelector('.server-online').innerHTML = status.online ? 'LTS-Survival服务器工作中！' : 'LTS-Survival服务器未启动！ ';
             document.querySelector('.server-motd').innerHTML = status.motd;
             document.querySelector('.server-players').innerHTML = status.players.now + '/' + status.players.max;
+            document.querySelector('.server-version').innerHTML = status.server.name;
         });
     </script>
 </body>

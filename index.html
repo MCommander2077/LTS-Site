@@ -28,6 +28,7 @@
             // you can change these to your own message!
             document.querySelector('.server-online').innerHTML = status.online ? '<font color="green">服务器正在运行中！</font>' : '<font color="brown">服务器未在运行中</font>';
             document.querySelector('.server-players').innerHTML = status.players.now + '/' + status.players.max;
+            document.querySelector('.server-version').innerHTML = status.server.name;
         });
     </script>
 
@@ -113,7 +114,7 @@
             <li>
                 <fieldset class="layui-elem-field layui-field-title">
                     <legend>服务器配置</legend>
-                    <p>服务端版本:1.19.2 Fabric</p>
+                    <p>服务端版本:<span class="server-version"></span></p>
                     <p>模组:Carpet Mod、Carpet Mod EX、Custom Skin Loader、ViaFabric</p>
                     <p>CPU:INTEL Celeron J3355</p>
                     <p>RAM:10G(服务器分配:8G)</p>
