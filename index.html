@@ -16,6 +16,20 @@
 
     <title>LTS-Survival服务器|官方主页</title>
     <script src="static/js/jquery.min.js"></script>
+    <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
+    <script>
+        MinecraftAPI.getServerStatus('lts.play.gamesmc.online', {
+            port: 25565 // optional, only if you need a custom port
+        }, function (err, status) {
+            if (err) {
+                return document.querySelector('.server-status').innerHTML = '查询错误！请刷新本页';
+            }
+
+            // you can change these to your own message!
+            document.querySelector('.server-online').innerHTML = status.online ? '<font color="green">服务器正在运行中！</font>' : '<font color="brown">服务器未在运行中</font>';
+            document.querySelector('.server-players').innerHTML = status.players.now + '/' + status.players.max;
+        });
+    </script>
 
     <link rel="stylesheet" href="static/css/layui.css">
     <link rel="stylesheet" href="static/css/index.css">
@@ -64,10 +78,10 @@
         </div>
         <div class="site-banner-main">
             <div class="site-zfj">
-                <i class="layui-icon" style="color: #fff; color: rgba(255,255,255,.7);">&#xe609;</i> 
+                <i class="layui-icon" style="color: #fff; color: rgba(255,255,255,.7);">&#xe609;</i>
             </div>
             <div class="layui-anim site-desc">
-                <cite>LTS-Survival服务器是一个养老、摸鱼的服务器（在这个服务器里你甚至还可以生电</cite>
+                <cite>LTS-Survival服务器是一个养老、摸鱼的服务器<del>（在这个服务器里你甚至还可以生电</del></cite>
             </div>
             <div class="site-download">
                 <a href="./question.html" class="layui-inline site-down" target="_blank">
@@ -88,9 +102,12 @@
         <ul class="site-idea">
             <li>
                 <fieldset class="layui-elem-field layui-field-title">
-                    <legend>服务器版本</legend>
-                    <p>目前服务器为1.19.2生存</p>
-                    <p>其他见服务器配置</p>
+                    <legend>服务器状态</legend>
+                    <div class="server-status">
+                        <p><span class="server-online"></span></p></br>
+                        <p>玩家：<span class="server-players"></span></p>
+                    </div>
+                    <a href="./status.html"><p>点击查看详细信息</p></a>
                 </fieldset>
             </li>
             <li>

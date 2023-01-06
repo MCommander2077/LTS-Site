@@ -1,0 +1,33 @@
+<!--如要使用查询源代码，请复制全部body的内容，否则查询不会生效！-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>LTS-Survival服务器|服务器状态</title>
+</head>
+
+<body>
+    <div class="server-status">
+        <p><span class="server-online"></span></br></p>
+        <p>服务器简介：<span class="server-motd"></span></br></p>
+        <p>玩家：<span class="server-players"></span></p>
+    </div>
+    <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
+    <script>
+        MinecraftAPI.getServerStatus('ddns.gamesmc.online', {
+            port: 25565 // optional, only if you need a custom port
+        }, function (err, status) {
+            if (err) {
+                return document.querySelector('.server-status').innerHTML = '查询错误！请刷新本页';
+            }
+
+            // you can change these to your own message!
+            document.querySelector('.server-online').innerHTML = status.online ? 'LTS-Survival服务器工作中！' : 'LTS-Survival服务器未启动！ ';
+            document.querySelector('.server-motd').innerHTML = status.motd;
+            document.querySelector('.server-players').innerHTML = status.players.now + '/' + status.players.max;
+        });
+    </script>
+</body>
+
+</html>
