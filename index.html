@@ -17,20 +17,7 @@
     <title>LTS-Survival服务器|官方主页</title>
     <script src="static/js/jquery.min.js"></script>
     <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
-    <script>
-        MinecraftAPI.getServerStatus('lts.play.gamesmc.online', {
-            port: 25565 // optional, only if you need a custom port
-        }, function (err, status) {
-            if (err) {
-                return document.querySelector('.server-status').innerHTML = '查询错误！请刷新本页';
-            }
-
-            // you can change these to your own message!
-            document.querySelector('.server-online').innerHTML = status.online ? '<font color="green">服务器正在运行中！</font>' : '<font color="brown">服务器未在运行中</font>';
-            document.querySelector('.server-players').innerHTML = status.players.now + '/' + status.players.max;
-            document.querySelector('.server-version').innerHTML = status.server.name;
-        });
-    </script>
+    <script srv="static/js/mcserverapi.js"></script>
 
     <link rel="stylesheet" href="static/css/layui.css">
     <link rel="stylesheet" href="static/css/index.css">
@@ -91,7 +78,8 @@
                 </a>
             </div>
             <div class="site-version">
-                <span>客户端下载：<cite class="site-showv"><a href="https://ddns.gamesmc.online:8890/1.16.5-GUNS-303.zip">点我下载</a></cite></span>
+                <span>客户端下载：<cite class="site-showv"><a
+                            href="https://ddns.gamesmc.online:8890/1.16.5-GUNS-303.zip">点我下载</a></cite></span>
                 <!--<span><a href="files/loginhelp.jpg" rel="nofollow" target="_blank">怎么游玩？</a></span>-->
                 <span>服务器地址：<em class="site-showdowns">不公开，进群获取</em></span>
             </div>
@@ -108,7 +96,9 @@
                         <p><span class="server-online"></span></p></br>
                         <p>玩家：<span class="server-players"></span></p>
                     </div>
-                    <a href="./status.html"><p>点击查看详细信息</p></a>
+                    <a href="./status.html">
+                        <p>点击查看详细信息</p>
+                    </a>
                 </fieldset>
             </li>
             <li>
@@ -127,7 +117,7 @@
                     <p>二周目：尚未开始</p>
                     <p>三周目：尚未开始</p>
                     <p>四周目：尚未开始</p>
-                    <p>五周目：尚未开始</p>
+                    <p> 五周目：尚未开始</p>
                 </fieldset>
             </li>
         </ul>
@@ -146,6 +136,24 @@
             </p>
         </div>
     </div>
+
+    <div class="zhezhao" id='zhezhao'>
+        <div class="tankuang">
+            <div id="header">
+                <span>我是弹窗</span>
+                <div id="header-right" onclick="hidder()">x</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        document.getElementById('zhezhao').style.display = "none";
+        function dianwo() {
+            document.getElementById('zhezhao').style.display = "";
+        }
+        function hidder() {
+            document.getElementById('zhezhao').style.display = "none";
+        }
+    </script>
 
 
     <!--
